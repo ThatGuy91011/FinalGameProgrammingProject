@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
@@ -13,18 +14,14 @@ public class UIManager : MonoBehaviour
 
     private GameObject GameOver;
 
+    private int Scene;
+
     public void StartGame()
     {
-        //Finds the menu screen
-        startGame = GameObject.Find("MainMenu");
-        //Finds the player
-        movingStart = GameObject.Find("Player");
-        //Allows the player to move when the game "starts"
-        //movingStart.GetComponent<PlayerMovement>().moveCheck = 1;
+        Scene = Random.Range(1, 4);
 
-        
-        startGame.GetComponent<CanvasScaler>().scaleFactor = 0;
-        startGame.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        SceneManager.LoadScene(Scene);
+
     }
 
     public void ExitGame()

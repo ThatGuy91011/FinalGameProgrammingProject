@@ -30,6 +30,11 @@ public class ShootingTest : MonoBehaviour
         {
             tf.position += tf.right * speed;
         }
+        else if (HitCheck == 3)
+        {
+            tf.rotation = new Quaternion(0, 0, 0, 0);
+            tf.position += tf.up * speed;
+        }
         else
         {
             tf.position -= tf.up * speed;
@@ -45,6 +50,10 @@ public class ShootingTest : MonoBehaviour
         else if (other.gameObject.tag == "LeftWall")
         {
             HitCheck = 2;
+        }
+        else if (other.gameObject.tag == "Player")
+        {
+            HitCheck = 3;
         }
     }
 }
