@@ -24,15 +24,15 @@ public class Shoot : MonoBehaviour
     IEnumerator Example()
     {
         yield return new WaitForSecondsRealtime(2);
-        tf.Rotate(new Vector3(0,0,45));
+        tf.Rotate(new Vector3(0,0,40));
         Shooting();
 
         yield return new WaitForSecondsRealtime(2);
-        tf.Rotate(new Vector3(0, 0, -90));
+        tf.Rotate(new Vector3(0, 0, -80));
         Shooting();
 
         yield return new WaitForSecondsRealtime(2);
-        tf.Rotate(new Vector3(0, 0, 45));
+        tf.Rotate(new Vector3(0, 0, 40));
         Shooting();
 
     }
