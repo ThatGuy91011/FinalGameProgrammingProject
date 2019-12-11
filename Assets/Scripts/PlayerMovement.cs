@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Lines 20-31 make sure that the player can't go any more right/left than the white walls around it
         if (tf.position.x == -23)
         {
             Position = 1;
@@ -29,8 +30,10 @@ public class PlayerMovement : MonoBehaviour
             Position = 3;
         }
 
+        //Makes the player move one spot left 
         if (Input.GetKeyDown((KeyCode.LeftArrow)))
         {
+            //Makes sure the platform isn't to the far left already
             if (Position != 1)
             {
                 tf.position += new Vector3(-3, 0, 0);
@@ -41,8 +44,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //Makes the player move one spot right
         if (Input.GetKeyDown((KeyCode.RightArrow)))
         {
+            //Makes sure the platform isn't to the far right already
             if (Position != 3)
             {
                 tf.position += new Vector3(3, 0, 0);
